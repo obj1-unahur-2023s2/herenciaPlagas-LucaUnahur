@@ -1,0 +1,79 @@
+import elementos.*
+import plagas.*
+import barrios.*
+
+describe "Test de plagas"{
+	const casa1 = new Hogar(nivelDeMugre=10, confort=30)
+	const casa2 = new Hogar(nivelDeMugre=10, confort=10)
+	const huerta1 = new Huerta(produccion=150)
+	const huerta2 = new Huerta(produccion=70)
+	const mascota1 = new Mascota (nivelDeSalud=400)
+	const mascota2 = new Mascota (nivelDeSalud=200)
+	
+	const barrio1 = new Barrio ()
+	const barrio2 = new Barrio ()
+	method initialize(){
+		barrio1.agregarElemento(casa1)
+		barrio1.agregarElemento(huerta1)
+		barrio1.agregarElemento(mascota1)
+		barrio1.agregarElemento(huerta2)
+		
+		barrio2.agregarElemento(casa2)
+		barrio2.agregarElemento(mascota1)
+		barrio2.agregarElemento(mascota2)
+	}
+	
+	test "casa1 es buena"{
+		assert.that( casa1.esBuena())
+	}
+	
+	test "casa2 no es buena"{
+		assert.notThat( casa2.esBuena())
+	}
+	
+	test "huerta1 es buena"{
+		assert.that( huerta1.esBuena())
+	}
+	
+	test "huerta2 no es buena"{
+		assert.notThat( huerta2.esBuena())
+	}
+	
+	test "mascota1 es buena"{
+		assert.that( mascota1.esBuena())
+	}
+	
+	test "mascota2 no es buena"{
+		assert.notThat( mascota2.esBuena())
+	}
+	
+	
+	
+	
+	test "barrio1 es copado"{
+		assert.that( barrio1.esCopado())
+	}
+	
+	test "barrio2 no es copado"{
+		assert.notThat( barrio2.esCopado())
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
